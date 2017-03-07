@@ -1,0 +1,34 @@
+{% if transactions is empty %}
+	<div class="history">
+		<div class="row bold">
+			<div class="center">No Transaction Found!</div>
+		</div>
+	</div>
+{% else %}
+	{% for txn in transactions %}
+		<div class="history">
+			<div class="row bold">
+				<div class="txn_no float_left">Txn No {{ txn.user_pocket_history_id }}</div>
+				<div class="txn_amount float_right">{{ txn.amount | raw }}</div>
+			</div>
+			<div class="row light">
+				<div class="txn_date">{{ txn.date }}</div>
+			</div>
+			<div class="row bold">
+				<div class="txn_category">{{ txn.transaction_category }}</div>
+			</div>
+			<div class="row light right">
+				<div class="txn_from"><span class="float_left">From: {{ txn.transaction_from }}</span><span>To: {{ txn.transaction_to }}</span></div>
+			</div>
+			<div class="row bold">
+				<div class="txn_approval">{{ txn.approval_status | raw }}</div>
+			</div>
+			{{ txn.rejection_reason | raw }}
+		</div>
+	{% endfor %}
+{% endif %}
+{% if(next_page > 0) %}
+	<div class="more_btn_container">
+		<a class="button more_btn" data-next-start="{{ next_start }}">{{ next_page }}+ More</a>
+	</div>
+{% endif %}

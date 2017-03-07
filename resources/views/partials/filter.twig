@@ -1,0 +1,56 @@
+<div class="filter-container linear-transition center_screen center">
+	<div class="head">
+		<div class="section">
+			<a class="icon-btns floating left back_btn"><i class="fa fa-chevron-left"></i> Back</a>
+			<span>Filter</span>
+			<a class="icon-btns floating right filter_apply_btn"><i class="fa fa-check"></i> Apply</a>
+		</div>
+	</div>
+	<div class="body">
+		<form id="cash_transactions_filter" class="form">
+			<fieldset>
+				<label class="form-labels" for="filter_from">From:</label>
+				<div class="form-input-container select">
+					<select class="form-controls" name="filter_from" id="filter_from">
+						<option value="*"></option>
+						{% for filter_from in filter_froms %}
+					        <option value="{{ filter_from.user_id }}">{{ filter_from.username }}</option>
+					    {% endfor %}
+					</select>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<label class="form-labels" for="filter_to">To:</label>
+				<div class="form-input-container select">
+					<select class="form-controls" name="filter_to" id="filter_to">
+						<option value="*"></option>
+						{% for filter_to in filter_tos %}
+					        <option value="{{ filter_to.id }}">{{ filter_to.text }}</option>
+					    {% endfor %}
+					</select>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<label class="form-labels" for="filter_flow_type">DR/CR:</label>
+				<div class="form-input-container select">
+					<select class="form-controls" name="filter_flow_type" id="filter_flow_type">
+						<option value="*"></option>
+						<option value="1">CR</option>
+						<option value="2">DR</option>
+					</select>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<label class="form-labels" for="filter_date_from">Date:</label>
+				<div class="form-input-container">
+					<input type="text" name="filter_date_from" id="filter_date_from" class="form-controls date_input pickdate" value="" placeholder="From" />
+					<span class="inputs_seprator">-</span>
+					<input type="text" name="filter_date_to" id="filter_date_to" class="form-controls date_input pickdate" value="" placeholder="To" />
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>

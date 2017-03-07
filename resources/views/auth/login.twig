@@ -1,0 +1,24 @@
+{% block content %}
+    <link href="{{ base_url() }}/css/login.2.css" rel="stylesheet" />
+    <section class="login-container">
+        <div class="login">
+            <h1><i class="fa fa-key"></i> Login to Web App</h1>
+            <form id="form">
+                <p><input type="text" name="username" value="" placeholder="Username" class="form-controls"></p>
+                <p><input type="password" name="password" value="" placeholder="Password" class="form-controls"></p>
+                <p class="remember_me">
+                    <label class="form-labels" for="remember_me">
+                        <input type="checkbox" class="checkbox-hidden" name="remember_me" id="remember_me">
+                        <label class="checkbox" for="remember_me">
+                            Keep me logged in
+                        </label>
+                    </label>
+                </p>
+                <p class="submit">
+                    <a class="form-controls button" onclick="login(); return false;"><i class="fa fa-lock"></i> Login</a>
+                </p>
+            </form>
+        </div>
+    </section>
+    <script src="{{ base_url() }}/js/login.js"></script>
+{% endblock %}

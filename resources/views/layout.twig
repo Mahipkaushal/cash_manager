@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="description" content="{{ page.description }}">
+        <meta name="author" content="{{ page.author }}">
+        <title>{{ page.title }}</title>
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{{ base_url() }}/css/style.2.css">
+        <link rel="stylesheet" href="{{ base_url() }}/css/css_loaders.css">
+        
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script>
+            var $baseUrl = '{{ base_url() }}';
+        </script>
+    </head>
+    <body class="no-user-select">
+        <div id="app">
+            {% include 'partials/header.twig' %}
+
+            {% block content %} {% endblock %}
+            
+            {% include 'partials/footer.twig' %}
+        </div>
+    </body>
+</html>

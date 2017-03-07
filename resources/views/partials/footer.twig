@@ -1,0 +1,35 @@
+<footer>
+	<div class="pageOverlay"></div>
+    <div class="overlay"></div>
+    <div id="pickdate-container"></div>
+    <script type="text/javascript" src="{{ base_url() }}/js/controller.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/js/model.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/js/localStorage.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/js/main.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/js/search.js"></script>
+
+    <link rel="stylesheet" href="{{ base_url() }}/css/datePicker/default.css">
+	<link rel="stylesheet" href="{{ base_url() }}/css/datePicker/default.date.css">
+    <script type="text/javascript" src="{{ base_url() }}/js/datePicker/picker.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/js/datePicker/picker.date.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/js/datePicker/legacy.js"></script>
+    <script type="text/javascript">
+    	$(document).on('click', '.pickdate', function() {
+			var $input = $('.pickdate').pickadate({
+				format: 'dd-mm-yyyy',
+				formatSubmit: 'yyyy-mm-dd',
+				hiddenPrefix: undefined,
+				hiddenSuffix: '_submit',
+				hiddenName: undefined,
+				container: '#pickdate-container',
+				closeOnSelect: true,
+				closeOnClear: true,
+				today: 'Today',
+				selectYears: true,
+	            selectMonths: true
+			})
+		
+			var picker = $input.pickadate('picker')
+		});
+    </script>
+</footer>

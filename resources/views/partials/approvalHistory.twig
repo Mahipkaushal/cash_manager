@@ -1,0 +1,34 @@
+{% if approvals is empty %}
+	<div class="approval">
+		<div class="row bold">
+			<div class="center">No Approval Found!</div>
+		</div>
+	</div>
+{% else %}
+	{% for approval in approvals %}
+		<div class="approval">
+			<div class="row bold">
+				<div class="txn_no float_left">Txn No {{ approval.cash_transaction_approval_id }}</div>
+				<div class="txn_amount float_right">{{ approval.amount | raw }}</div>
+			</div>
+			<div class="row light">
+				<div class="txn_date">{{ approval.transaction_date }}</div>
+			</div>
+			<div class="row bold">
+				<div class="txn_category">{{ approval.transaction_category }}</div>
+			</div>
+			<div class="row light right">
+				<div class="txn_from"><span class="float_left">From: {{ approval.transaction_from }}</span><span>To: {{ approval.transaction_to }}</span></div>
+			</div>
+			<div class="row bold">
+				<div class="txn_approval right"><span class="float_left light">{{ approval.date_added }}</span><span>{{ approval.approval_status | raw }}</span></div>
+			</div>
+			{{ approval.rejection_reason | raw }}
+		</div>
+	{% endfor %}
+{% endif %}
+{% if(next_page > 0) %}
+	<div class="more_btn_container">
+		<a class="button more_btn" data-next-start="{{ next_start }}">{{ next_page }}+ More</a>
+	</div>
+{% endif %}

@@ -1,0 +1,62 @@
+<div id="cash_manager" class="app-page">
+	<div class="head">
+		<div class="section">
+			<a class="icon-btns floating left back_btn" onClick="hideAppPage();"><i class="fa fa-chevron-left"></i> Back</a>
+			<span>{{ page.title }}</span>
+			<a class="icon-btns floating right reset_btn"><i class="fa fa-refresh"></i> Reset</a>
+		</div>
+	</div>
+	<div class="body">
+		<form id="cash_manager_form" class="form">
+			<fieldset>
+				<label class="form-labels" for="from">From:</label>
+				<div class="form-input-container select">
+					<select class="form-controls required" data-field-type="select" data-field-name="From" name="from" id="from">
+						{% for from in froms %}
+					        <option value="{{ from.user_id }}"{{ from.selected }}>{{ from.username }}</option>
+					    {% endfor %}
+					</select>
+				</div>
+			</fieldset>
+			<fieldset>
+				<label class="form-labels" for="amount">Amount:</label>
+				<div class="form-input-container">
+					<input type="number" name="amount" id="amount" class="form-controls number_format required" data-field-type="number" data-field-name="Amount" onkeypress="return isNumberKey(event)" min="0" />
+				</div>
+			</fieldset>
+			<fieldset class="have_search">
+				<label class="form-labels" for="to">To:</label>
+				<div class="form-input-container">
+					<input type="hidden" class="required" data-field-type="text" data-field-name="To" name="to_id" />
+					<input type="hidden" name="to_description_required"value="0" />
+					<input type="text" name="to" id="to" class="form-controls to_field" />					
+				</div>
+				<!--*********** Search Form [Start] ***********-->
+
+					{{ page.search | raw }}
+
+				<!--*********** Search Form [End] ***********-->
+			</fieldset>
+			<fieldset>
+				<label class="form-labels" for="comment">Comment:</label>
+				<div class="form-input-container">
+					<textarea class="form-controls" id="comment" name="comment"></textarea>
+				</div>
+			</fieldset>
+			<fieldset>
+				<label class="form-labels" for="date">Date:</label>
+				<div class="form-input-container select">
+					<select class="form-controls required" data-field-type="select" data-field-name="Date" name="date" id="date">
+						{% for date in dates %}
+					        <option value="{{ date.value }}"{{ date.selected }}>{{ date.text }}</option>
+					    {% endfor %}
+					</select>
+				</div>
+			</fieldset>
+			<fieldset>
+				<label class="form-labels">&nbsp;</label>
+				<a class="button elements_block elements_3d bg_color_green submit_btn"><i class="fa fa-paper-plane"></i> Submit</a>
+			</fieldset>
+		</form>
+	</div>
+</div>

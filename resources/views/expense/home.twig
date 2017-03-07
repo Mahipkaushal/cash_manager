@@ -1,0 +1,26 @@
+{% block content %}
+	{% include 'partials/nav.twig' %}
+	<div id="content" class="content" name="content">
+		<div class="user-details">
+			<div class="user-pocket">
+				<div class="form-labels">
+					Pocket Value
+				</div>
+				<div class="pocket-value{{ pocket.indicator }}">
+					<i class="fa fa-rupee" aria-hidden="true"></i> <span>{{ pocket.value }}</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="app-pages">
+
+		</div>
+
+		<div class="page_buttons">
+			<a class="button elements_3d elements_block cash_manager_btn" onClick="getCashManager();">Cash Manager</a>
+			<a class="button elements_3d elements_block transactions_btn" onClick="getCashTransactions();">Transactions</i></a>
+			<a class="button elements_3d elements_block transactions_btn" onClick="getCashTransactionApprovals();">Approvals</i></a>
+		</div>
+	</div>
+	{% include 'partials/options.twig' %}
+{% endblock %}

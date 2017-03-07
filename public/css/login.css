@@ -1,0 +1,59 @@
+.login-container {
+    padding: 0px 0px;
+    width: -ms-calc(90% - 0px);
+    width: -webkit-calc(90% - 0px);
+    width: -o-calc(90% - 0px);
+    width: -moz-calc(90% - 0px);
+    width: calc(90% - 0px);
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    background: rgba(255,255,255,0.4);
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+.login-container .login {
+    padding: 20px;
+    width: -ms-calc(100% - 40px);
+    width: -webkit-calc(100% - 40px);
+    width: -o-calc(100% - 40px);
+    width: -moz-calc(100% - 40px);
+    width: calc(100% - 40px);
+    position: relative;
+}
+.login-container .form-controls {
+    background: #FFF;
+    width: -ms-calc(100% - 20px);
+    width: -webkit-calc(100% - 20px);
+    width: -o-calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: calc(100% - 20px);
+    font-size: 16px;
+    border-color: #EEE;
+    border-radius: 3px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.login-container .form-controls.button {
+    border: 0px;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1);
+    background-color: #4d90fe;
+    cursor: pointer;
+    display: block;
+}
+.login-container .form-controls.button:hover {
+    border: 0px;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    background-color: #357ae8;
+}
+.login-container .remember_me {
+    text-align: right;
+}
+.login-container .remember_me .form-labels {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px;
+    width: auto;
+}

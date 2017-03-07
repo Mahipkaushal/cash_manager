@@ -1,0 +1,17 @@
+<div id="cash_transactions" class="app-page">
+	<div class="head">
+		<div class="section">
+			<a class="icon-btns floating left" onClick="hideAppPage();"><i class="fa fa-chevron-left"></i> Back</a>
+			<span>{{ page.title }}</span>
+			<a class="icon-btns floating right filter_btn"><i class="fa fa-filter"></i> Filter</a>
+		</div>
+	</div>
+	<div class="body">		
+		<div class="histories" id="histories">
+			{{ page.transactions | raw }}
+		</div>
+	</div>
+	<div class="foot">
+		{{ page.filter | raw }}
+	</div>
+</div>
