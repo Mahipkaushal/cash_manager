@@ -350,7 +350,7 @@ header .header .user .username {
 	top: 5px;
 	display: none;
 	box-shadow: 5px 5px 5px #333;
-	background: url(../images/logo.png) no-repeat center 2% #FFF;
+	background: #FFF; /*url(../images/logo.png) no-repeat center 2% #FFF;*/
 	background-size: 25%;
 	z-index: 1000;
 }

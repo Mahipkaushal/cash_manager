@@ -4,7 +4,7 @@ namespace App\Library\Database;
 
 use \App\Exceptions\DatabaseErrorException;
 
-class MySQLi {
+class mysqli {
 	private $link;
 
 	public function __construct() {	   
